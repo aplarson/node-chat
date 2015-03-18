@@ -8,5 +8,12 @@
     <input type="submit" value="Send Message">
   </form>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="./javascripts/jquery-1.11.2.min.js"></script>
+  <script src="/javascripts/jquery-1.11.2.min.js"></script>
+  <script src="/javascripts/chat.js"></script>
+  <script src="/javascripts/chat_ui.js"></script>
+  <script>
+    $(document).ready(function () {
+      new ChatApp.ChatUI();
+    });
+  </script>
 </body>

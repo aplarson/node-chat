@@ -1,6 +1,6 @@
 ;(function () {
   if (typeof ChatApp === "undefined") {
-    window.ChatApp = {}''
+    window.ChatApp = {};
   }
 
   var Chat = window.ChatApp.Chat = function (socket) {
