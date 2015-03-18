@@ -1,4 +1,6 @@
 ;(function () {
+  var nicknameReq = new RegExp(/^\/nick /);
+
   if (typeof ChatApp === "undefined") {
     window.ChatApp = {};
   }
@@ -8,6 +10,10 @@
   };
 
   Chat.prototype.sendMessage = function (message) {
-    this.socket.emit("message", { message: message });
+    if (nicknameReq.test(message)) {
+      this.socket.emit("nicknameChangeRequest", { nickname: message });
+    } else {
+      this.socket.emit("message", { message: message });
+    }
   };
 })();
